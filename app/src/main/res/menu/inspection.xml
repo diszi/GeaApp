@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item
+        android:id="@+id/navigation_details"
+        android:icon="@drawable/ic_baseline_car_24"
+        android:title="Általános" />
+
+    <item
+        android:id="@+id/navigation_vignette"
+        android:icon="@drawable/ic_baseline_car_24"
+        android:title="Autópálya matricák" />
+
+    <item
+        android:id="@+id/navigation_accesssories"
+        android:icon="@drawable/ic_baseline_car_24"
+        android:title="Tartozékok" />
+
+
+    <item
+        android:id="@+id/navigation_spec"
+        android:icon="@drawable/ic_baseline_car_24"
+        android:title="Szerkezeti jellemzől" />
+
+
+    <item
+        android:id="@+id/navigation_damage"
+        android:icon="@drawable/ic_baseline_car_24"
+        android:title="Sérülések" />
+
+
+
+</menu>

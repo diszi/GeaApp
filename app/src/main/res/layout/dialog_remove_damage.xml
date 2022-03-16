@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:background="@drawable/dialog_shape">-->
+
+<!--<LinearLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="vertical"-->
+<!--    android:minWidth="500dp"-->
+<!--    android:background="@drawable/dialog_shape"-->
+<!--    android:elevation="10dp">-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_shape"
+    android:minWidth="500dp"
+    android:elevation="10dp">
+<!--    <LinearLayout-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+        <TextView
+            android:id="@+id/actDamage_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:paddingTop="20dp"
+            android:text="Biztosan törli az alábbi hibát?"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/act_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp" />
+
+        <Button
+            android:id="@+id/button_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEM"
+            android:layout_gravity="end"
+            android:layout_margin="10dp">
+        </Button>
+<!--    </LinearLayout>-->
+
+
+
+
+
+<!--    <Button-->
+<!--        android:id="@+id/button_yes"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="YES"-->
+<!--        android:layout_margin="10dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintRight_toLeftOf="@id/button_no"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/act_recyclerView">-->
+<!--    </Button>-->
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+</LinearLayout>

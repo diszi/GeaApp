@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/a.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/b.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/bottomnav_color.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/dialog_shape.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/divider_horizontal.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/divider_horizontal_min.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/divider_vertical.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/divider_vertical_min.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/ic_baseline_car_24.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/ic_baseline_compare_arrows_24.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/ic_baseline_note_add_24.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/ic_baseline_people_24.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/input_rectangle.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/radio_text_selected.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/radiobutton.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/radiobutton_a.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/radiobutton_b.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/radiobutton_v2.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/radiobuttons.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/drawable/searchview.xml" value="0.287109375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/activity_authentication.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/activity_inspection_details.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/activity_login.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/activity_main.xml" value="0.21" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/activity_main_inspection.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/activity_main_inspection_items.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/activity_main_line.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/activity_main_test.xml" value="0.23860837438423646" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/activity_main_test_bottmnav.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/activity_main_test_recyclerview_row.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/activity_search_inspection.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/activity_search_inspection_row.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/activity_vehicle_details.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/bottom_navigation_inspection.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/bottom_navigation_inspection_item.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/bottom_navigation_test.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/bottom_navigation_test_item.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/dialog_damage.xml" value="0.271875" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/dialog_remove_damage.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/dialog_remove_damage_row.xml" value="0.25" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/fragment_accessories.xml" value="0.33" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/fragment_blank.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/fragment_car_details.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/fragment_damage.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/fragment_details.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/fragment_general_info.xml" value="0.33" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/fragment_line_accessories.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/fragment_line_damage.xml" value="0.33" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/fragment_search.xml" value="0.25" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/fragment_specifications.xml" value="0.284375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/fragment_structuralfeatures.xml" value="0.35" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/fragment_vignette.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/fragment_vignette_items.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/layout/sample_my_view.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/menu/inspection.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/menu/line.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/menu/main_menu.xml" value="0.275" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.25859375" />
+        <entry key="..\:/Users/szido/scmax/androidstudio_apps/GeaApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.25859375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,1239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.view.line.fragment.LineAccessoriesFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_general_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackground"
+            app:titleTextColor="@color/colorPrimary"
+            app:title="Tartozékok ">
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar_general_info">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp"
+                android:paddingTop="25dp"
+                android:paddingBottom="25dp">
+                <LinearLayout
+                    android:id="@+id/linearlayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginVertical="10dp">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Antenna"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_antenna"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Forgalmi engedély"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_forgengedely"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Kerékőr kulccsal"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_kerekorkulccsal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Rádió kód"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_radiokod"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearlayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginVertical="10dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/linearlayout1">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Assistance info"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_assistanceinfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Izzókészlet"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_izzokeszlet"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Kezelési útmutató"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_kezelesiutmutato"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Szervíz könyv"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_szervkonyv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearlayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginVertical="10dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/linearlayout2">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Elakadásjelző h."
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_elakadasjelzo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="KGFB igazolás"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_kgfbigazolas"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mentődoboz"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_mentodoboz"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Vonóhorog"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_vonohorog"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearlayout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginVertical="10dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/linearlayout3">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Emelő"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_emelo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Keresztlécek"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_keresztlecek"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mobilparkolás"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_mobilpark"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Vonószem"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_vonoszem"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearlayout5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginVertical="10dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/linearlayout4">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Flottakezelői felh."
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_flottakezeloifel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Kerékkulcs"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_kerekkulcs"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Pótkerék"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_potkerek"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Üzemanyagkártya"
+                        android:textAlignment="textEnd"
+                        android:textSize="16dp"
+
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_uzemanyagkartya"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/linearlayout_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/constraint_layout1"
+                android:orientation="horizontal"
+                android:paddingTop="45dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Jármű kulcsai"
+                    android:textSize="24dp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Téli gumi"
+                    android:textSize="24dp"
+                    android:textStyle="bold"></TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Nyári gumi"
+                    android:textSize="24dp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="xxxx"
+                    android:textSize="24dp"
+                    android:textStyle="bold">
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearlayout_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearlayout_subtitle"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:divider="@drawable/divider_horizontal_min"
+                android:showDividers="middle"
+                android:paddingBottom="25dp">
+
+                <LinearLayout
+                    android:id="@+id/linearlayout_jarmukulcsai"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:divider="@drawable/divider_horizontal_min"
+                        android:showDividers="middle">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Általános">
+
+                        </TextView>
+
+                        <!--                                <TextView-->
+                        <!--                                    android:id="@+id/text_nr_jarmukulcsai"-->
+                        <!--                                    android:layout_width="0dp"-->
+                        <!--                                    android:layout_weight="0.5"-->
+                        <!--                                    android:layout_height="wrap_content"-->
+                        <!--                                    android:gravity="center"-->
+                        <!--                                    android:text="3 db">-->
+
+                        <!--                                </TextView>-->
+
+                        <TextView
+                            android:id="@+id/text_nr_jarmukulcsai"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0">
+
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="db"
+                            android:paddingRight="5dp">
+
+                        </TextView>
+
+                        <Button
+                            android:id="@+id/button_minus_jarmukulcsai"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+                            android:text=" - ">
+
+                        </Button>
+
+                        <Button
+                            android:id="@+id/button_plus_jarmukulcsai"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+                            android:text=" + "
+
+                            >
+
+                        </Button>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/linearlayout_teligumi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:divider="@drawable/divider_horizontal_min"
+                        android:showDividers="middle">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Acél felin">
+
+                        </TextView>
+
+                        <!--                    <TextView-->
+                        <!--                        android:id="@+id/text_nr_teli_afelni"-->
+                        <!--                        android:layout_width="0dp"-->
+                        <!--                        android:layout_weight="0.5"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:gravity="center"-->
+                        <!--                        android:text="0 db">-->
+
+                        <!--                    </TextView>-->
+
+                        <TextView
+                            android:id="@+id/text_nr_teli_afelni"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0">
+
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="db"
+                            android:paddingRight="5dp">
+
+                        </TextView>
+
+
+                        <Button
+                            android:id="@+id/button_minus_teli_afelni"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+                            android:text=" - ">
+
+                        </Button>
+
+                        <Button
+                            android:id="@+id/button_plus_teli_afelni"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+                            android:text=" + "
+
+                            >
+
+                        </Button>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:divider="@drawable/divider_horizontal_min"
+                        android:showDividers="middle">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Könnyűfém felnin">
+
+                        </TextView>
+
+                        <!--                    <TextView-->
+                        <!--                        android:id="@+id/text_nr_teli_kfelni"-->
+                        <!--                        android:layout_width="0dp"-->
+                        <!--                        android:layout_weight="0.5"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:gravity="center"-->
+                        <!--                        android:text="0 db">-->
+
+                        <!--                    </TextView>-->
+
+                        <TextView
+                            android:id="@+id/text_nr_teli_kfelni"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0">
+
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="db"
+                            android:paddingRight="5dp">
+
+                        </TextView>
+
+                        <Button
+                            android:id="@+id/button_minus_teli_kfelni"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+                            android:text=" - ">
+
+                        </Button>
+
+                        <Button
+                            android:id="@+id/button_plus_teli_kfelni"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+                            android:text=" + "
+
+                            >
+
+                        </Button>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:divider="@drawable/divider_horizontal_min"
+                        android:showDividers="middle">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Felni nélkül">
+
+                        </TextView>
+
+                        <!--                    <TextView-->
+                        <!--                        android:id="@+id/text_nr_teli_felnin"-->
+                        <!--                        android:layout_width="0dp"-->
+                        <!--                        android:layout_weight="0.5"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:gravity="center"-->
+                        <!--                        android:text="0 db">-->
+
+                        <!--                    </TextView>-->
+
+                        <TextView
+                            android:id="@+id/text_nr_teli_felnin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0">
+
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="db"
+                            android:paddingRight="5dp">
+
+                        </TextView>
+
+                        <Button
+                            android:id="@+id/button_minus_teli_felnin"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+                            android:text=" - ">
+
+                        </Button>
+
+                        <Button
+                            android:id="@+id/button_plus_teli_felnin"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+                            android:text=" + "
+
+                            >
+
+                        </Button>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearlayout_nyarigumi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:divider="@drawable/divider_horizontal_min"
+                        android:showDividers="middle">
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Acél felin">
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/text_nr_nyari_afelni"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0">
+
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="db"
+                            android:paddingRight="5dp">
+
+                        </TextView>
+
+
+                        <Button
+                            android:id="@+id/button_minus_nyari_afelni"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+
+                            android:text=" - ">
+
+                        </Button>
+
+                        <Button
+                            android:id="@+id/button_plus_nyari_afelni"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text=" + ">
+
+                        </Button>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:divider="@drawable/divider_horizontal_min"
+                        android:showDividers="middle">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Könnyűfém felnin">
+
+                        </TextView>
+
+
+
+                        <!--                    <TextView-->
+                        <!--                        android:id="@+id/text_nr_nyari_kfelni"-->
+                        <!--                        android:layout_width="0dp"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:layout_weight="0.5"-->
+                        <!--                        android:gravity="center"-->
+                        <!--                        android:text="0 db">-->
+
+                        <!--                    </TextView>-->
+
+
+                        <TextView
+                            android:id="@+id/text_nr_nyari_kfelni"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0">
+
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="db"
+                            android:paddingRight="5dp">
+
+                        </TextView>
+                        <Button
+                            android:id="@+id/button_minus_nyari_kfelni"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text=" - ">
+
+                        </Button>
+
+                        <Button
+                            android:id="@+id/button_plus_nyari_kfelni"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text=" + ">
+
+                        </Button>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:divider="@drawable/divider_horizontal_min"
+                        android:showDividers="middle">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Felni nélkül">
+
+                        </TextView>
+
+                        <!--                    <TextView-->
+                        <!--                        android:id="@+id/text_nr_nyari_felnin"-->
+                        <!--                        android:layout_width="0dp"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:layout_weight="0.5"-->
+                        <!--                        android:gravity="center"-->
+                        <!--                        android:text="0 db">-->
+
+                        <!--                    </TextView>-->
+
+                        <TextView
+                            android:id="@+id/text_nr_nyari_felnin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0">
+
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="db"
+                            android:paddingRight="5dp">
+
+                        </TextView>
+
+                        <Button
+                            android:id="@+id/button_minus_nyari_felnin"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text=" - ">
+
+                        </Button>
+
+                        <Button
+                            android:id="@+id/button_plus_nyari_felnin"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text=" + ">
+
+                        </Button>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearlayout_generalinfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:divider="@drawable/divider_horizontal_min"
+                        android:showDividers="middle">
+
+                        <TextView
+                            android:id="@+id/textview_gumiszonyeg"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Gumiszőnyeg">
+
+                        </TextView>
+
+
+                        <!--                    <TextView-->
+                        <!--                        android:id="@+id/text_nr_gumiszonyeg"-->
+                        <!--                        android:layout_width="0dp"-->
+                        <!--                        android:layout_weight="0.5"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:gravity="center"-->
+                        <!--                        android:text="3 db">-->
+
+                        <!--                    </TextView>-->
+
+                        <TextView
+                            android:id="@+id/text_nr_gumiszonyeg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0">
+
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="db"
+                            android:paddingRight="5dp">
+
+                        </TextView>
+
+
+                        <Button
+                            android:id="@+id/button_minus_gumiszonyeg"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+
+                            android:text=" - ">
+
+                        </Button>
+
+                        <Button
+                            android:id="@+id/button_plus_gumiszonyeg"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+                            android:text=" + "
+
+                            >
+
+                        </Button>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:divider="@drawable/divider_horizontal_min"
+                        android:showDividers="middle">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Riasztó távirányító">
+
+                        </TextView>
+
+                        <!--                    <TextView-->
+                        <!--                        android:id="@+id/text_nr_riasztotav"-->
+                        <!--                        android:layout_width="0dp"-->
+                        <!--                        android:layout_weight="0.5"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:gravity="center"-->
+                        <!--                        android:text="3 db">-->
+
+                        <!--                    </TextView>-->
+
+                        <TextView
+                            android:id="@+id/text_nr_riasztotav"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0">
+
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="db"
+                            android:paddingRight="5dp">
+
+                        </TextView>
+
+                        <Button
+                            android:id="@+id/button_minus_riasztotav"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+
+                            android:text=" - ">
+
+                        </Button>
+
+                        <Button
+                            android:id="@+id/button_plus_riasztotav"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+                            android:text=" + ">
+
+                        </Button>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:divider="@drawable/divider_horizontal_min"
+                        android:showDividers="middle">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Láthatósági mellény">
+
+                        </TextView>
+
+
+                        <!--                    <TextView-->
+                        <!--                        android:id="@+id/text_nr_lathatosagim"-->
+                        <!--                        android:layout_width="0dp"-->
+                        <!--                        android:layout_weight="0.5"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:gravity="center"-->
+                        <!--                        android:text="3 db">-->
+
+                        <!--                    </TextView>-->
+
+                        <TextView
+                            android:id="@+id/text_nr_lathatosagim"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0">
+
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="db"
+                            android:paddingRight="5dp">
+
+                        </TextView>
+
+                        <Button
+                            android:id="@+id/button_minus_lathatosagim"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+
+                            android:text=" - ">
+
+                        </Button>
+
+                        <Button
+                            android:id="@+id/button_plus_lathatosagim"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:layout_height="wrap_content"
+                            android:text=" + "
+
+                            >
+
+                        </Button>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearlayout_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/linearlayout_2">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Note:"
+                    android:textSize="20dp"
+                    android:padding="15dp"></TextView>
+
+                <!--            <TextView-->
+                <!--                android:id="@+id/text_accessories"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:textSize="18dp"></TextView>-->
+
+                <EditText
+                    android:id="@+id/input_notes"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:lines="4"
+                    android:background="@drawable/input_rectangle">
+
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearlayout_end_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearlayout_bottom"
+                android:orientation="vertical"
+                android:layout_margin="15dp"
+                android:paddingTop="25dp">
+
+                <Button
+                    android:id="@+id/button_save_accessories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SAVE"></Button>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+</FrameLayout>

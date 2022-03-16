@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page_1"
+        android:enabled="true"
+        android:title="Kezdőlap"/>
+    <item
+        android:id="@+id/page_2"
+        android:enabled="true"
+        android:title="Átadás/ávétel"/>
+
+    <item
+        android:id="@+id/page_3"
+        android:enabled="true"
+        android:title="Új igénylés"/>
+
+    <item
+        android:id="@+id/page_4"
+        android:enabled="true"
+        android:title="Foglaltságok"/>
+</menu>

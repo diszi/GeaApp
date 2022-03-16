@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.view.inspection.activity.InspectionMainActivity">
+
+    <TextView
+        android:id="@+id/text_vehicleMainDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vehicle: xxx - 000 "
+        android:textSize="25dp"
+        android:textStyle="bold"
+        ></TextView>
+
+
+    <TextView
+        android:id="@+id/text_authenticatedUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="User: ACE0000"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textAlignment="textEnd"
+        ></TextView>
+
+    <FrameLayout
+        android:id="@+id/frame_main_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_vehicleMainDetails"
+        />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomnav_main_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        app:itemBackground="@color/colorPrimary"
+        android:foreground="?attr/selectableItemBackground"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"
+        app:menu="@menu/line"
+        >
+        <!--        android:background="?android:attr/windowBackground"-->
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+</RelativeLayout>

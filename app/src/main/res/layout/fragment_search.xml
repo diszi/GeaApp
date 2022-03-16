@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.inspection.fragment.SearchFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:text="SEARCH"-->
+<!--        android:gravity="center_vertical|center_horizontal"/>-->
+
+        <LinearLayout
+            android:id="@+id/linearlayout_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textview_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gépjármű keresése"
+                android:textAlignment="center"
+                android:textSize="25dp">
+            </TextView>
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchview_car"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:tooltipText="Search..."
+                android:background="@color/colorAccent"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_inspection_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               />
+
+        </LinearLayout>
+
+</FrameLayout>

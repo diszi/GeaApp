@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+<!--    <item-->
+<!--        android:id="@+id/navigation_details"-->
+<!--        android:icon="@drawable/ic_baseline_car_24"-->
+<!--        android:title="Általános" />-->
+
+<!--    <item-->
+<!--        android:id="@+id/navigation_tranfer"-->
+<!--        android:icon="@drawable/ic_baseline_transfer"-->
+<!--        android:title="Átadás/átvétel" />-->
+
+<!--    <item-->
+<!--        android:id="@+id/navigation_spec"-->
+<!--        android:icon="@drawable/ic_baseline_car_24"-->
+<!--        android:title="Specifikáció" />-->
+
+    <item
+        android:id="@+id/navigation_damages"
+        android:icon="@drawable/ic_baseline_car_24"
+        android:title="Sérülés" />
+
+    <item
+        android:id="@+id/navigation_accesssories"
+        android:icon="@drawable/ic_baseline_car_24"
+        android:title="Tartozékok" />
+
+
+
+
+
+</menu>

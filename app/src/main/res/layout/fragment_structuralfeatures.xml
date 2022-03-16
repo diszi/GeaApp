@@ -1,0 +1,1979 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.view.inspection.fragment.StructFeaturesFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/actVehicleFeatures_progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="visible"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintlayout_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="Szerkezeti jellemzők"
+                android:textStyle="bold"
+                android:textSize="24dp"
+                android:paddingTop="20dp"
+                android:textColor="@color/colorPrimary">
+
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/layout_vehicle_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:padding="15dp">
+
+
+                <TextView
+                    android:id="@+id/text_vehicle_nr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    android:layout_gravity="center_vertical|center_horizontal">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/text_vehicle_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    >
+
+                </TextView>
+
+            </LinearLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbar_structural_features"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:background="@color/colorBackground"-->
+<!--            app:title="Szerkezeti jellemzők "-->
+<!--            app:titleTextColor="@color/colorPrimary">-->
+
+<!--        </androidx.appcompat.widget.Toolbar>-->
+
+<!--        <ScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/toolbar_structural_features"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            >-->
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/constraintlayout_header">
+
+            <RelativeLayout
+                android:id="@+id/relativelayout_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true">
+
+                <LinearLayout
+                    android:id="@+id/linearlayout_horizontal_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/divider_horizontal"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="25dp"
+                    android:paddingTop="25dp"
+                    android:paddingBottom="25dp"
+                    android:showDividers="middle">
+
+                    <LinearLayout
+                        android:id="@+id/linearlayout_h_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:divider="@drawable/divider_vertical_min"
+                        android:orientation="vertical"
+                        android:showDividers="middle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/linearlayout_h_2"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Ablakmosó"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_ablakmoso"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:id="@+id/radiobtn_kivalo_1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:id="@+id/radiobtn_megfelelo_1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:id="@+id/radiobtn_rossz_1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Ablaktörlő e/h"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_ablaktorlo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Akkumulátor"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_akkumulator"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:layout_weight="1"
+                                android:paddingRight="10dp"
+                                android:text="Biztonsági öv"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_biztonsagiov"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Futómű állapota"
+                                android:textSize="16dp" />
+
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_futomu"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Féklámpa"
+                                android:textSize="16dp" />
+
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_feklampa"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Fékrendszer"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_fekrendszer"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Gumik állapota"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_gumikallapota"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Helyzetjelző"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_helyzetjelzo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Hőtőrendszer"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_hutorendszer"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Indítómotor"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_inditomotor"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Irányjelző, vészjelző"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_iranyjelzo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Kipufogó-rendszer"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_kipufogo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Szélvédő állapota"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_szelvedoallapota"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearlayout_h_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:divider="@drawable/divider_vertical_min"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp"
+                        android:showDividers="middle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/linearlayout_h_1"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Kontroll lámpák"
+                                android:textSize="16dp"
+
+                                />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_kontrolllampak"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Kormánymű"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_kormanymu"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Kürt"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_kurt"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Olajfolyás"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_olajfolyas"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Olajnyomás"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_olajnyomas"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Rögzítő fék"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_rogzitofek"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Tengelykapcsoló"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_tengelykapcsolo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Tolatólámpa"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_tolatolampa"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Tompított fényszóró"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_tompfenyszoro"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Távolsági fényszóró"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_tavfenyszoro"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Töltés"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_toltes"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Utastér állapota"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_utasterallapota"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:paddingRight="10dp"
+                                android:text="Visszapillantó tükrök"
+                                android:textSize="16dp" />
+
+                            <RadioGroup
+                                android:id="@+id/radiogroup_visszapillanto"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2.5"
+                                android:divider="@drawable/divider_horizontal_min"
+                                android:orientation="horizontal"
+                                android:showDividers="middle">
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Kiváló"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Megfelelő"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/radiobuttons"
+                                    android:button="@null"
+                                    android:padding="10dp"
+                                    android:text="Rossz"
+                                    android:textAlignment="center"
+                                    android:textAllCaps="true"
+                                    android:textColor="@drawable/radio_text_selected"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:paddingRight="10dp"
+                                android:text="Megjegyzés"
+                                android:textSize="16dp" />
+
+                            <EditText
+                                android:id="@+id/input_note"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:layout_weight="2.5"
+                                android:background="@drawable/input_rectangle"
+                                android:lines="3"
+                                android:padding="8dp">
+
+                            </EditText>
+
+
+                        </LinearLayout>
+
+
+                        <Button
+                            android:id="@+id/saveBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_marginTop="25dp"
+                            android:text="MENTÉS"
+                            android:textSize="20dp"></Button>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+<!--                <Button-->
+<!--                    android:id="@+id/saveBtn"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:text="SAVE"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:layout_alignParentRight="true"-->
+<!--                    android:layout_below="@id/linearlayout_horizontal_body"-->
+<!--                   ></Button>-->
+
+            </RelativeLayout>
+        </ScrollView>
+
+
+    </RelativeLayout>
+</FrameLayout>

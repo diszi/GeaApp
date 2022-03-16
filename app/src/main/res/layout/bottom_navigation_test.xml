@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/bottom_parent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/bottom_divier">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bottomnav_recyclerview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:overScrollMode="never">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/bottom_divier"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/maximoLightBlue"/>
+
+
+</RelativeLayout>

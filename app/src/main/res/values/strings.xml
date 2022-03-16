@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">GeaApp</string>
+
+
+    <string name="alert_select_ip">Please select IP address!</string>
+
+
+    <string name="error_qty_required">Quantity is required!</string>
+    <string name="error_qty_physical_count">Quantity must be less than or equal to physical count</string>
+    <string name="error_storeroom_required">Storeroom is required!</string>
+    <string name="error_bin_required">Bin number is required!</string>
+    <string name="error_tobin_equal_frombin">To Bin is the same as the From Bin</string>
+    <string name="error_in_scanning">Error in scanning...</string>
+    <string name="error_required">Required!</string>
+    <string name="error_wrongUser">Wrong User</string>
+    <string name="error_authFailed">Authetntication Failed</string>
+    <string name="error_unknown">Unknown Error</string>
+    <string name="error_network_2">Network is unreachable</string>
+    <string name="error_network">Network Error</string>
+    <string name="error_general">General Error</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+    <string name="logout_question">Are you sure that log out from application?</string>
+    <string name="text_YES">Yes</string>
+    <string name="text_NO">No</string>
+    <string name="logout_question_hu">Biztos ki akar lépni az alkalmazásból?</string>
+    <string name="text_YES_hu">Igen</string>
+    <string name="text_NO_hu">Nem</string>
+</resources>
