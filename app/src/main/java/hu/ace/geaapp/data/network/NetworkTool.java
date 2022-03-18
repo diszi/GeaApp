@@ -19,7 +19,7 @@ public class NetworkTool {
     }
 
     public static HttpURLConnection createSOAPConnection(String url, String soapAction,String soapPayload) throws IOException {
-        System.out.println("\n url -> soap payload =>  \n"+  soapPayload);
+      //  System.out.println("\n url -> soap payload =>  \n"+  soapPayload);
         return createConnection(url, soapAction,soapPayload, true,true);
     }
 

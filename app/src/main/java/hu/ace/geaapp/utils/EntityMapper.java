@@ -57,9 +57,10 @@ public class EntityMapper {
             }
             for(int i=0;i<damageList.size();i++){
                 System.out.println(" REST : DAMAGE ==> ID="+damageList.get(i).getDamageID()+
-                        "; DamageEnum="+damageList.get(i).getDamageEnum()+"; Status="+damageList.get(i).getStatus()+
+                        "; Status="+damageList.get(i).getStatus()+
                         "; coordX="+damageList.get(i).getCoordinateX()+"; coordY="+damageList.get(i).getCoordinateY()+
-                        "; coordObj="+damageList.get(i).getDamageCoordinate()+"; desc="+damageList.get(i).getDescription());
+                        "; coordObj="+damageList.get(i).getDamageCoordinate()+"; desc="+damageList.get(i).getDescription()+
+                        "; view="+damageList.get(i).getCustomView());
             }
 
         } catch (SAXException | ParserConfigurationException | IOException e) {

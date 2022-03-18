@@ -29,7 +29,7 @@ import hu.ace.geaapp.ui.view.inspection.dialog.DamageDialog;
 import hu.ace.geaapp.ui.view.inspection.fragment.AccessoriesFragment;
 import hu.ace.geaapp.ui.view.inspection.fragment.DamageFragment;
 import hu.ace.geaapp.utils.EntityMapper;
-import hu.ace.geaapp.utils.InspectionEntityMapper;
+
 import io.reactivex.Observable;
 
 public class MainPresenter extends BasePresenter implements BaseViewPresenter {
@@ -44,8 +44,8 @@ public class MainPresenter extends BasePresenter implements BaseViewPresenter {
     public void getVehicles(RemoteCallBack<List<Asset>> remoteCallBack){
         HttpCall httpCall = new HttpCall();
         httpCall.setMethod(HttpCall.RequestMethod.GET);
-        //httpCall.setUrl(Urls.GET_VEHICLES_LIST);//http://192.168.133.51/maxrest/rest/os/ACE_GEA_ASSET?_dropnulls=0&STATUS=ACTIVE&CLASSSTRUCTUREID=1053
-        httpCall.setUrl("http://192.168.133.51/maxrest/rest/os/ACE_GEA_ASSET?_dropnulls=0&STATUS=ACTIVE&CLASSSTRUCTUREID=1053&ASSETTYPE=VEHICLE");
+       // httpCall.setUrl("http://192.168.133.51/maxrest/rest/os/ACE_GEA_ASSET?_dropnulls=0&STATUS=ACTIVE&CLASSSTRUCTUREID=1053&ASSETTYPE=VEHICLE");
+        httpCall.setUrl(Urls.GET_VEHICLE_LIST);
         new HttpRequestAsyncTask(){
             @Override
             public void onResponse(String response) {
@@ -63,8 +63,7 @@ public class MainPresenter extends BasePresenter implements BaseViewPresenter {
     }
 
 
-    //get actual vehicle accesssories
-    public void getVehicleAccessories(Asset asset, RemoteCallBack<Accessories> remoteCallBack){
+    /*public void getVehicleAccessories(Asset asset, RemoteCallBack<Accessories> remoteCallBack){
         HttpCall httpCall = new HttpCall();
         httpCall.setMethod(HttpCall.RequestMethod.GET);
         httpCall.setUrl(Urls.GET_VEHICLE+"&ASSETNUM="+asset.getAssetnum());
@@ -81,15 +80,14 @@ public class MainPresenter extends BasePresenter implements BaseViewPresenter {
                         remoteCallBack.onSucces(null);
                     }
 
-                    /*Asset vehicle = InspectionEntityMapper.transformVehicle(response);
-                    remoteCallBack.onSucces(vehicle);*/
+
                     Log.d("---------->","Load VEHICLES list : success");
                 }else{
                     Log.e("----------> ","Load VEHICLES List : ERROR ");
                 }
             }
         }.execute(httpCall);
-    }
+    }*/
 
 
     public void updateVehicleAccessories(AccessoriesTemp accessoriesTemp,RemoteCallBack<Boolean> remoteCallBack){
@@ -106,8 +104,6 @@ public class MainPresenter extends BasePresenter implements BaseViewPresenter {
                 }, () -> { // onComplate Action
                    // getVehicleItem(HolderSingleton.getInstance().getVehicleAsset().getAssetnum());
                 }));
-
-
     }
 
     public void updateVehicleStructuralFeatures(StructFeaturesTemp structFeatures, RemoteCallBack<Boolean> remoteCallBack){
@@ -127,18 +123,19 @@ public class MainPresenter extends BasePresenter implements BaseViewPresenter {
 
     //get selected Vehicle details
     public void getVehicleItem(String assetnumber, RemoteCallBack<Asset> remoteCallBack){
-        Log.i("------------->","MainPresenter -> getVehicle item after change tartozekok ");
+        Log.i("------------>","MainPresenter -> getVehicleItem()");
+        //Log.i("------------->","MainPresenter -> getVehicle item after change tartozekok ");
             HttpCall httpCall = new HttpCall();
             httpCall.setMethod(HttpCall.RequestMethod.GET);
-            httpCall.setUrl("http://192.168.133.51/maxrest/rest/os/ACE_GEA_ASSET?_dropnulls=0&STATUS=ACTIVE&CLASSSTRUCTUREID=1053&ASSETNUM="+assetnumber);
-
+            //httpCall.setUrl("http://192.168.133.51/maxrest/rest/os/ACE_GEA_ASSET?_dropnulls=0&STATUS=ACTIVE&CLASSSTRUCTUREID=1053&ASSETNUM="+assetnumber);
+            httpCall.setUrl(Urls.GET_VEHICLE+"&ASSETNUM="+assetnumber);
             new HttpRequestAsyncTask(){
                 @Override
                 public void onResponse(String response) {
                     super.onResponse(response);
                     if (response != null){
                         Asset vehicle = EntityMapper.transformVehicleItem(response);
-                        System.out.println(" GET VEHICLE result = "+vehicle.getAssetnum());
+                        //System.out.println(" GET VEHICLE result = "+vehicle.getAssetnum());
                         remoteCallBack.onSucces(vehicle);
 
                         Log.d("---------->","Load VEHICLES list : success");
@@ -151,9 +148,12 @@ public class MainPresenter extends BasePresenter implements BaseViewPresenter {
     }
 
     public void getVehicleDamages(String assetnum, RemoteCallBack<List<AceAssetDamage>> remoteCallBack){
+        Log.i("------------------>","getVehicleDamages()");
+
         HttpCall httpCall = new HttpCall();
         httpCall.setMethod(HttpCall.RequestMethod.GET);
-        httpCall.setUrl("http://192.168.133.51/maxrest/rest/os/ACE_GEA_ASSET?_dropnulls=0&STATUS=ACTIVE&CLASSSTRUCTUREID=1053&ASSETNUM="+assetnum);
+        //httpCall.setUrl("http://192.168.133.51/maxrest/rest/os/ACE_GEA_ASSET?_dropnulls=0&STATUS=ACTIVE&CLASSSTRUCTUREID=1053&ASSETNUM="+assetnum);
+        httpCall.setUrl(Urls.GET_VEHICLE+"&ASSETNUM="+assetnum);
         new HttpRequestAsyncTask(){
             @Override
             public void onResponse(String response) {
@@ -161,8 +161,7 @@ public class MainPresenter extends BasePresenter implements BaseViewPresenter {
                 if (response != null){
                     List<AceAssetDamage> assetDamageList = EntityMapper.transformVehicleDamageList(response);
                     remoteCallBack.onSucces(assetDamageList);
-                    /*Asset vehicle = InspectionEntityMapper.transformVehicle(response);
-                    remoteCallBack.onSucces(vehicle);*/
+
                     Log.d("---------->","Load DAMAGES list : success");
                 }else{
                     Log.e("----------> ","Load DAMAGES List : ERROR ");
@@ -174,16 +173,17 @@ public class MainPresenter extends BasePresenter implements BaseViewPresenter {
 
 
     public void addDamage(AceAssetDamage damage, Asset vehicleItem, DamageFragment fragment, DamageDialog dialog){
-        Log.d("------------------>"," add DAMAGE : ["+damage.getDamageEnum().getDamageType()+"; added damage color ="+damage.getCustomView().getColor()+"]");
+        Log.d("------------------>"," add DAMAGE : ["+damage.getDamageEnum().getDamageType()+"; added damage  ="+damage.getCustomView()+"]");
+        // Log.d("------------------>"," add DAMAGE : ["+damage.getDamageEnum().getDamageType()+"; added damage color ="+damage.getCustomView().getColor()+"]");
         Observable<String> addInvuseLineRemoteObservable = new AddDamageSOAP<>(damage,vehicleItem).createObserver();
 //        Observable<String> addInvuseLineRemoteObservable = new AddDamageSOAP<>(damage,addedDamage,vehicleItem).createObserver();
         Log.d("------------------>"," Subscribe to Observable");
         addDisposableToList(addInvuseLineRemoteObservable
                 .subscribe((id) -> { // onNext Consumer
-                    //getDamagesAfterUpdate(vehicleItem.getAssetnum(),fragment,dialog);
-                    //fragment.continueDrawing(addedDamage.getDamageType(),addedDamage.getColor());
-                    fragment.continueDrawingAfterSave(damage.getDamageEnum(),damage.getCustomView().getColor());
+                    //dialog.reloadFragment();
                     dialog.dismiss();
+                    fragment.continueDrawingAfterSave(damage.getDamageEnum(),damage.getCustomView().getColor());
+
                 }, (throwable) -> { // onError Consumer
                     getErrorMessage(throwable);
                     Log.d("-------------->", "Don't get data", throwable);
@@ -193,10 +193,11 @@ public class MainPresenter extends BasePresenter implements BaseViewPresenter {
     }
 
     public void deleteDamage(AceAssetDamage deletedDamage,DamageFragment mfragment, RemoteCallBack<Boolean> remoteCallBack){
+        Log.i("------------------>","presenter.deleteDamage() -> "+deletedDamage.getCustomView());
+        //System.out.println(" Remove damage from view : "+deletedDamage.getDamageID()+"; "+deletedDamage.getCustomView());
         HttpCall httpCall = new HttpCall();
         httpCall.setMethod(HttpCall.RequestMethod.DELETE);
 
-        //http://192.168.133.51/maxrest/rest/os/ACE_GJK_KAR/23
         httpCall.setUrl(Urls.DELETE_DAMAGE+deletedDamage.getDamageID());
         new HttpRequestAsyncTask(){
             @Override
@@ -204,8 +205,9 @@ public class MainPresenter extends BasePresenter implements BaseViewPresenter {
                 super.onResponse(response);
                // System.out.println(" RESPONSE after DELETE => "+response);
                 if (response != null){
-                    Log.d("---------->","DELETE DAMAGE : success");
-                    mfragment.removeSelectedDamage(deletedDamage);
+                    Log.d("---------->","DELETE DAMAGE : success ==> call removeSelectedDamageFromView on DamageDialog");
+                    //mfragment.removeSelectedDamage(deletedDamage);
+                    mfragment.removeSelectedDamageFromView(deletedDamage);
                    // remoteCallBack.onSucces(true);
                    /* I/---------->: connection: 404; Not Found
                     I/System.out:  connection response = Error 404: BMXAA8252E - An object structure with the name ACE_GJK_KAR cannot be found. Correct the name in the path and then resubmit the request.

@@ -58,13 +58,6 @@ public class InspectionMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_inspection);//kereso felulet
         ButterKnife.bind(this);
 
-       // toolBar = getSupportActionBar();
-       /* BottomNavigationView navigationView = (BottomNavigationView) findViewById(R.id.bottomnav_main_insp);
-        navigationView.setOnNavigationItemReselectedListener((BottomNavigationView.OnNavigationItemReselectedListener) mOnNavigationItemSelectedListener);*/
-
-        /*BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottomnav_main_insp);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);*/
-
         vehicle = (Asset) getIntent().getExtras().getSerializable(Asset.SERIALIZABLE_NAME);
        // activityFlag = (int) getIntent().getSerializableExtra("ACTIVITY_FLAG");
 
@@ -73,7 +66,6 @@ public class InspectionMainActivity extends AppCompatActivity {
 
         mainBottomNav.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        //loadFragment(new GeneralInfoFragment());
         loadFragment(GeneralInfoFragment.newInstance());
 
     }

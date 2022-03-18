@@ -40,17 +40,8 @@ public class VignetteAdapter extends RecyclerView.Adapter<VignetteAdapter.Vignet
     public void setVignetteList(List<AceAssetVignette> list){
 
         this.vignetteList.clear();
-        //this.vignetteList.addAll(sortVignetteListByDate(list));
         this.vignetteList.addAll(list);
-        /*for(AceAssetVignette v: this.vignetteList){
-            System.out.println(" VIGNETTE = "+v.getExpirationDate()+"; year="+v.getYear());
-        }*/
-
         Collections.sort(this.vignetteList, (o1, o2) -> o2.getExpirationDate().compareTo(o1.getExpirationDate()));
-       /* for(AceAssetVignette v: this.vignetteList){
-            System.out.println(" VIGNETTE = "+v.getExpirationDate()+"; year="+v.getYear());
-        }*/
-
 
         this.notifyDataSetChanged();
     }

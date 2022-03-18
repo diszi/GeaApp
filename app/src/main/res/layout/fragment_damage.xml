@@ -10,15 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-<!--        <ProgressBar-->
-<!--            android:id="@+id/actVehicleAccess_progressBar"-->
-<!--            style="?android:attr/progressBarStyle"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:indeterminate="true"-->
-<!--            android:visibility="visible"-->
-<!--            android:layout_centerHorizontal="true"-->
-<!--            android:layout_centerVertical="true" />-->
 
 
 
@@ -83,11 +74,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--        <ScrollView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/layout_header"-->
-<!--            android:layout_alignParentBottom="true">-->
 
 
 
@@ -100,6 +86,8 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:layout_below="@id/layout_header">
+
+
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imageview_car"

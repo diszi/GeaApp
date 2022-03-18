@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -22,10 +21,8 @@ import hu.ace.geaapp.R;
 import hu.ace.geaapp.data.model.damages.AceAssetDamage;
 import hu.ace.geaapp.data.model.Asset;
 import hu.ace.geaapp.data.model.DamageCoord;
-import hu.ace.geaapp.ui.base.RemoteCallBack;
-import hu.ace.geaapp.ui.view.inspection.CustomView;
+import hu.ace.geaapp.ui.view.inspection.design.CustomView;
 import hu.ace.geaapp.ui.view.Damage;
-import hu.ace.geaapp.ui.view.inspection.dialog.DamageDialog;
 import hu.ace.geaapp.ui.view.line.presenter.LinePresenter;
 
 /**

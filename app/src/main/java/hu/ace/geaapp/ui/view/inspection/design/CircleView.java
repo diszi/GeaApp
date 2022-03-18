@@ -1,4 +1,4 @@
-package hu.ace.geaapp.ui.view.inspection;
+package hu.ace.geaapp.ui.view.inspection.design;
 
 import android.content.Context;
 import android.graphics.Canvas;

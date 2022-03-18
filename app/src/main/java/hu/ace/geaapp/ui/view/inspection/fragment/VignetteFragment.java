@@ -40,6 +40,8 @@ public class VignetteFragment extends Fragment {
     TextView vehicleNR;
     @BindView(R.id.text_vehicle_type)
     TextView vehicleType;
+    @BindView(R.id.text_empty)
+    TextView emptyText;
 
 
     public VignetteFragment() {
@@ -98,7 +100,14 @@ public class VignetteFragment extends Fragment {
         Context context = this.getContext();
         LinearLayoutManager layoutManager = new LinearLayoutManager(context);
         this.adapter = new VignetteAdapter(this);
-        this.adapter.setVignetteList(selectedVehicleAsset.getAssetVignetteList());
+        if (selectedVehicleAsset.getAssetVignetteList().isEmpty()){
+            emptyText.setVisibility(View.VISIBLE);
+        }else{
+            emptyText.setVisibility(View.GONE);
+            this.adapter.setVignetteList(selectedVehicleAsset.getAssetVignetteList());
+        }
+
+
         this.mRecyclerView.setLayoutManager(layoutManager);
         this.mRecyclerView.setAdapter(this.adapter);
     }

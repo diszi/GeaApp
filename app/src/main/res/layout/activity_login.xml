@@ -87,7 +87,7 @@
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:hint="Azonosító"
-            android:text="maxadmin"
+
             android:inputType="textCapCharacters"
             android:nextFocusDown="@id/inputtext_password"
             android:background="@drawable/edittext_shape"
@@ -101,7 +101,7 @@
             android:layout_height="50dp"
             android:inputType="textPassword"
             android:hint="Jelszó"
-            android:text="He11oo70."
+
             android:background="@drawable/edittext_shape"
             android:paddingLeft="12dp"
             android:layout_marginTop="20dp"

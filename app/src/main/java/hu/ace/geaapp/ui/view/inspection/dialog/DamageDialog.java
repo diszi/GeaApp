@@ -1,6 +1,7 @@
 package hu.ace.geaapp.ui.view.inspection.dialog;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,9 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 
 import hu.ace.geaapp.R;
 import hu.ace.geaapp.data.model.Asset;
@@ -17,29 +21,25 @@ import hu.ace.geaapp.data.model.DamageTemp;
 import hu.ace.geaapp.data.model.damages.AceAssetDamage;
 import hu.ace.geaapp.ui.view.Damage;
 import hu.ace.geaapp.ui.view.inspection.fragment.DamageFragment;
-import hu.ace.geaapp.ui.view.inspection.presenter.InspectionPresenter;
+
 import hu.ace.geaapp.ui.view.main.MainPresenter;
 
 public  class DamageDialog extends DialogFragment implements View.OnClickListener {
 
-    //private int nNum;
     private Button buttonSave, buttonCancel;
     private EditText textDescription;
 
-    private float coordX, coordY;
-    private Damage selectedType;
     private int selectedColor;
 
     private DamageFragment fragment;
-    //private InspectionPresenter presenter;
     private MainPresenter mainPresenter;
 
-    private DamageTemp damageObject = null;
     private Asset vehicleAsset;
-
     private AceAssetDamage damage = null;
+    private Damage selectedType;
 
     public static DamageDialog newInstance(Asset vehicleAsset,AceAssetDamage damage){
+        Log.i("------------------>","DamageDialog: newInstance()");
         DamageDialog damageDialog = new DamageDialog();
         Bundle args = new Bundle();
         args.putFloat("COORD_X",damage.getDamageCoordinate().getCoordinateX());
@@ -54,37 +54,20 @@ public  class DamageDialog extends DialogFragment implements View.OnClickListene
     }
 
 
-    /*public static DamageDialog newInstance(float coordinateX, float coordinateY, Damage damageType, int circleColor, Asset vehicleAsset, AceAssetDamage damage){
-        DamageDialog damageDialog = new DamageDialog();
-        Bundle args = new Bundle();
-        //args.putInt("num", num);
-        args.putFloat("COORD_X",coordinateX);
-        args.putFloat("COORD_Y",coordinateY);
-        //args.putBundle("DAMAGE_TYPE",damageType);
-        //args.putString("DAMAGE_TYPE",damageType.getDamageType());
-        args.putSerializable("DAMAGE_TYPE",damageType);
-        args.putInt("CIRCLE_COLOR",circleColor);
-        args.putSerializable(Asset.SERIALIZABLE_NAME,vehicleAsset);
-        args.putSerializable(AceAssetDamage.SERIALIZABLE_NAME,damage);
-        damageDialog.setArguments(args);
-
-        return damageDialog;
-
-    }*/
 
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i("------------------>","DamageDialog: onCreate()");
         if (getArguments() != null){
-            coordX = getArguments().getFloat("COORD_X");
-            coordY = getArguments().getFloat("COORD_Y");
+            //coordX = getArguments().getFloat("COORD_X");
+            //coordY = getArguments().getFloat("COORD_Y");
             fragment = (DamageFragment) getTargetFragment();
             selectedColor = getArguments().getInt("CIRCLE_COLOR");
             selectedType = (Damage) getArguments().getSerializable("DAMAGE_TYPE");
             vehicleAsset = (Asset) getArguments().getSerializable(Asset.SERIALIZABLE_NAME);
             damage = (AceAssetDamage) getArguments().getSerializable(AceAssetDamage.SERIALIZABLE_NAME);
-         //   System.out.println(" Add damage: [x="+coordX+"; y="+coordY+"; color="+selectedColor+"; type="+selectedType+"; assetnum="+vehicleAsset.getAssetnum()+"]");
         }
 
 
@@ -96,7 +79,7 @@ public  class DamageDialog extends DialogFragment implements View.OnClickListene
 
         View view = inflater.inflate(R.layout.dialog_damage, container, false);
 
-        //presenter = new InspectionPresenter();
+
         mainPresenter = new MainPresenter();
 
         buttonCancel = view.findViewById(R.id.button_cancel);
@@ -125,27 +108,20 @@ public  class DamageDialog extends DialogFragment implements View.OnClickListene
     }
 
     private void cancelTransaction(){
-//        fragment.removeDamageCircle();
+        Log.i("------------------>","Add Damage dialog : cancelButton");
+        /*System.out.println(" CANCEL button onclick: removeDamage : "+damage.getDamageID()+"; "+damage.getStatus()+"; "+damage.getCustomView()+
+                "; color = "+selectedColor);*/
         fragment.removeSelectedDamage(damage);
         fragment.continueDrawing(selectedType,selectedColor);
         this.dismiss();
     }
 
     private void saveTransaction(){
-        //System.out.println(" SAVE damage on ["+coordX+"; "+coordY+"] ==> type = "+selectedType.getDamageType());
-        //damageObject = new DamageTemp(coordX,coordY,selectedType,textDescription.getText().toString(),selectedColor);
-
+        Log.i("------------------>","Add Damage dialog : saveButton");
         damage.setDescription(textDescription.getText().toString());
-
-        //System.out.println(getParentFragment()+"; "+getParentFragmentManager()+"; "+(DamageFragment)getParentFragment());
-        //((DamageFragment) getParentFragment()).initDamageView();
-        //fragment.initDamageView(selectedColor,selectedType);
-
         mainPresenter.addDamage(damage,vehicleAsset, fragment,this);
 
-
-        //fragment.continueDrawing(selectedType,selectedColor);
-        //this.dismiss();
-
     }
+
+
 }

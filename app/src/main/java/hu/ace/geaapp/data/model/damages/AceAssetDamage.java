@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import hu.ace.geaapp.data.model.DamageCoord;
 import hu.ace.geaapp.ui.view.Damage;
-import hu.ace.geaapp.ui.view.inspection.CustomView;
+import hu.ace.geaapp.ui.view.inspection.design.CustomView;
 
 //ASSET_GJK_KAR
 public class AceAssetDamage implements Serializable {

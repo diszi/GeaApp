@@ -9,7 +9,7 @@ import hu.ace.geaapp.data.network.HttpRequestAsyncTask;
 import hu.ace.geaapp.ui.base.BasePresenter;
 import hu.ace.geaapp.ui.base.BaseViewPresenter;
 import hu.ace.geaapp.ui.base.RemoteCallBack;
-import hu.ace.geaapp.utils.InspectionEntityMapper;
+
 
 public class LinePresenter extends BasePresenter implements BaseViewPresenter {
     @Override

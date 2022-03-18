@@ -24,7 +24,7 @@ import hu.ace.geaapp.data.model.Asset;
 import hu.ace.geaapp.data.model.StructFeatures;
 import hu.ace.geaapp.singleton.HolderSingleton;
 import hu.ace.geaapp.ui.view.inspection.activity.InspectionMainActivity;
-import hu.ace.geaapp.ui.view.inspection.presenter.InspectionPresenter;
+
 import hu.ace.geaapp.ui.view.main.SearchActivity;
 import hu.ace.geaapp.utils.EnvironmentTool;
 

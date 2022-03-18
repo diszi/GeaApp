@@ -52,8 +52,9 @@ public class HttpRequestAsyncTask extends AsyncTask<HttpCall, String, String> {
             }
 
             this.response = convertInputStreamToString(streamReader_);
-
-            System.out.println(" connection response = "+this.response);//connection response = Error 400: BMXAA3851E - Connecting to the server has been temporarily disabled.
+            if (statusCode != 200){
+                System.out.println(" connection response = "+this.response);//connection response = Error 400: BMXAA3851E - Connecting to the server has been temporarily disabled.
+            }
             /*if (statusCode == 400){
                 Toast.makeText(this,"Connection to the server has been temporarily disablet",Toast.LENGTH_SHORT).show();
             }*/

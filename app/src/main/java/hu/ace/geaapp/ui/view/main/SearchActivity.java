@@ -24,8 +24,8 @@ import hu.ace.geaapp.data.model.StructFeatures;
 import hu.ace.geaapp.ui.base.RemoteCallBack;
 import hu.ace.geaapp.ui.component.OnBackPressedDialog;
 import hu.ace.geaapp.ui.view.inspection.activity.InspectionMainActivity;
-import hu.ace.geaapp.ui.view.inspection.presenter.InspectionPresenter;
-import hu.ace.geaapp.ui.view.line.activity.VehicleDetailsActivity;
+
+
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -156,12 +156,12 @@ public class SearchActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-
+/*
     public void launchVehicleLineDetailsActivity(Asset vehicle){
         Intent intent = new Intent(this, VehicleDetailsActivity.class);
         intent.putExtra(Asset.SERIALIZABLE_NAME,vehicle);
         startActivity(intent);
-    }
+    }*/
 
     @Override
     public void onBackPressed() {

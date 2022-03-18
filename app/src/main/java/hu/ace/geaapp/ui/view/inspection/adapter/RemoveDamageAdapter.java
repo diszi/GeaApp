@@ -83,13 +83,9 @@ public class RemoveDamageAdapter  extends RecyclerView.Adapter<RemoveDamageAdapt
 
             mCardView.setCardBackgroundColor(aceAssetDamage.getCustomView().getColor());
 
-            removeBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                   // System.out.println(" OnClick on REMOVE btn");
-                    mDialog.selectedDamage(aceAssetDamage);
+            removeBtn.setOnClickListener(v -> {
+                mDialog.selectedDamage(aceAssetDamage);
 
-                }
             });
 
 
